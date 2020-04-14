@@ -9,9 +9,16 @@ app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
+// app.get("/", (req, res) => {
+//   res.send("Under the Construction");
+// });
 app.get("/", (req, res) => {
-  res.send("Under the Construction");
-});
+    res.render("index");
+  });
+
+app.get("/signIn", (req, res) => {
+    res.render("sign_in");
+  });
 
 const PORT = 8080;
 const ADDRESS = "localhost";
