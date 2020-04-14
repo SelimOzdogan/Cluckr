@@ -1,0 +1,25 @@
+<%- include("../partials/header.ejs") %>
+<div class="newCluckBody">
+    <% if ( !request.cookies.userName ) {%>
+    <div> Sign in ol</div>
+    <% } else {%>
+    <form action="/clucks" method="POST">
+        <input type="hidden" name="userName" value="<%= request.cookies.userName %>" />
+
+        <div class="inputBody">
+            <label for="content">Content</label><br />
+            <textarea class="inputText" type="text" name="content" placeholder="Whatchoo cluckin' 'bout?"></textarea>
+        </div>
+        <div class="inputBody">
+            <label for="imageUrl">Image Url</label><br />
+            <input class="inputText" type="url" name="imageUrl" placeholder="https://i.imgur.com/qM6KaEy.gifv" />
+        </div>
+        <div class="divButton">
+            <input type="submit" class="inputButton" value="Cluck!">
+        </div>
+    </form>
+    <% }%>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

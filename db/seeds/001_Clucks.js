@@ -7,8 +7,8 @@ exports.seed = function (knex, Promise) {
       let index = 1;
       const cohorts = Array.from({ length: 20 }).map(() => {
         return {
-          userName: faker.userName,
-          content:  faker.content,
+          userName: faker.internet.userName(),
+          content:  faker.lorem.paragraph(),
           imageUrl:
             ["https://i.pinimg.com/474x/40/21/63/4021636b5d203c1aba86e2643a30b87c.jpg",
               "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Skype_for_Business_logo.png",

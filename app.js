@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const logger = require("morgan");
 const cookieParser = require('cookie-parser')
+const methodOverride = require("method-override");
 
 const app = express();
 
@@ -13,28 +14,24 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-// app.get("/", (req, res) => {
-//   res.send("Under the Construction");
-// });
 app.get("/", (request, response) => {
     response.render("index");
 });
 
-app.get("/signIn", (request, response) => {
-    response.render("sign_in", { request });
-});
+app.use(
+    methodOverride((request, response) => {
+        if (request.body && request.body._method) {
+            const method = request.body._method;
+            return method;
+        }
+    })
+);
 
-app.post('/signIn', (request, response) => {
-    const { userName } = request.body;
-    const oneDay = 1000 * 60 * 60 * 24;
-    response.cookie('userName', userName, { maxAge: oneDay })
-    response.render("sign_in", { request });
-})
+const sessionsRouter = require("./routes/sessionsRouter");
+app.use("/sessions", sessionsRouter);
 
-app.delete('/signIn', (request, response) => {
-    response.clearCookie('userName')
-    response.render("sign_in");
-})
+const clucksRouter = require("./routes/clucksRouter");
+app.use("/clucks", clucksRouter);
 
 
 const PORT = 8080;

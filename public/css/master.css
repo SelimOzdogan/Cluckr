@@ -1,15 +1,34 @@
-.nav{
-border: solid silver 1px;
+.nav {
+  border: solid silver 1px;
 }
-.signInBody {
+.body {
   margin: 15px;
   border: solid silver 2px;
   padding: 10px;
 }
+::placeholder {
+  color: silver;
+}
+.inputBody {
+}
 
+.inputText {
+  margin-top: 5px;
+  min-width: -webkit-fill-available;
+  height: 35px;
+  color: black;
+  font-size: 16px;
+  padding-left: 10px;
+}
+textarea {
+  height: 80px !important;
+  padding: 10px !important;
+}
 .divButton {
   display: flex;
   flex-flow: row-reverse;
+}
+.inputButton {
 }
 
 label {
@@ -17,21 +36,28 @@ label {
   color: silver;
 }
 
-input {
-  height: 35px;
-  color: silver;
+.cluckBody {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 5px 20px 5px;
+  padding: 5px;
+  border: 2px solid lightgray;
 }
-input[type="submit"] {
-  
+.cluckcontentBody {
+  padding-left: 5px;
+    color: silver;
+    font-size: 17px;
 }
+.avatar {
+  height: 60px;
+}
+.cluckImage{
+  width: auto;
+    height: 200px;
+    text-align: center;
+    padding-top: 5px;
 
-input[type="text"] {
-  margin-top: 5px;
-  min-width: -webkit-fill-available;
-}
-
-.signInButton{
-    font-weight: bold;
-    width: 100px;
-    margin-top: 15px;
-}
+  }
+  .cluckInfo{
+    font-weight: bolder;
+  }

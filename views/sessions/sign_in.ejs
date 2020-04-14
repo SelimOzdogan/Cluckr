@@ -2,9 +2,9 @@
 <div class="signInBody">
     <% if ( !request.cookies.userName ) {%>
     <form action="/signIn" method="POST">
-        <div>
+        <div class="inputBody">
             <label for="userName">User Name</label><br />
-            <input type="text" name="userName" placeholder="e.g. Madam Welminster" />
+            <input class="inputText" type="text" name="userName" placeholder="e.g. Madam Welminster" />
         </div>
         <div class="divButton">
             <input type="submit" class="signInButton" value="Sign In">
