@@ -1,0 +1,37 @@
+.nav{
+border: solid silver 1px;
+}
+.signInBody {
+  margin: 15px;
+  border: solid silver 2px;
+  padding: 10px;
+}
+
+.divButton {
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+label {
+  font-size: 17px;
+  color: silver;
+}
+
+input {
+  height: 35px;
+  color: silver;
+}
+input[type="submit"] {
+  
+}
+
+input[type="text"] {
+  margin-top: 5px;
+  min-width: -webkit-fill-available;
+}
+
+.signInButton{
+    font-weight: bold;
+    width: 100px;
+    margin-top: 15px;
+}
