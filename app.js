@@ -6,3 +6,4 @@ const app = express();
 app.use(logger("dev"));
 
 app.use(express.static(path.join(__dirname, "public")));
+
