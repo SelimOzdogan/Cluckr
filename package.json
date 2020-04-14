@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:create": "createdb --echo cluckr_db",
+    "db:drop": "dropdb --if-exists --echo cluckr_db",
+    "db:migrate": "knex migrate:latest",
+    "db:seed": "knex seed:run",
+    "db:rollback": "knex migrate:rollback",
+    "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed"
   },
   "author": "Selim Ozdogan",
   "license": "ISC",
@@ -13,9 +18,12 @@
     "cookie-parser": "^1.4.5",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "knex": "^0.20.14",
+    "morgan": "^1.10.0",
+    "pg": "^8.0.2"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
     "nodemon": "^2.0.3"
   }
 }
