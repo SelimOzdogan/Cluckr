@@ -33,12 +33,10 @@
     display: inline-block;
     font-size: 15px;
     font-weight: bolder;
+    border-radius:5px;
 }
 
-
 .body {
-  margin: 15px;
-  border: solid silver 2px;
   padding: 10px;
 }
 ::placeholder {
@@ -58,6 +56,7 @@
 textarea {
   height: 80px !important;
   padding: 10px !important;
+  border-color: lightgray;
 }
 .divButton {
   display: flex;
@@ -82,6 +81,7 @@ label {
   padding-left: 5px;
   color: silver;
   font-size: 17px;
+  width: -webkit-fill-available;
 }
 .avatar {
   height: 60px;
