@@ -13,7 +13,12 @@ router.get("/", (request, response) => {
 });
 
 router.get("/new", (request, response) => {
-    response.render("clucks/new", { request });
+    if (!request.cookies.userName) {
+        response.redirect("/sessions/signIn");
+    }
+    else {
+        response.render("clucks/new", { request });
+    }
 });
 
 router.post("/", (request, response) => {

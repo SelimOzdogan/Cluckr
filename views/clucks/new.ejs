@@ -1,8 +1,6 @@
 <%- include("../partials/header.ejs") %>
 <div class="newCluckBody">
-    <% if ( !request.cookies.userName ) {%>
-    <div> Sign in ol</div>
-    <% } else {%>
+    <% if ( request.cookies.userName ) {%>
     <form action="/clucks" method="POST">
         <input type="hidden" name="userName" value="<%= request.cookies.userName %>" />
 

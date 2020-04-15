@@ -5,16 +5,18 @@
     <div class="cluckBody">
         <div class="avatar">
             <img
-                src="https://previews.123rf.com/images/krisdog/krisdog1703/krisdog170300160/74807966-a-cute-cartoon-chicken-rooster-character.jpg">
+                src="../images/avatar.jpg">
         </div>
         <div class="cluckcontentBody">
             <div class="cluckInfo"><%= `${cluck.userName} * ${moment(cluck.createdAt).toNow()}` %></div>
             <div class="cluckcontent">
                 <p><%= cluck.content %> </p>
             </div>
+            <% if( cluck.imageUrl ) {%>
             <div class="cluckImage">
                 <img src="<%= cluck.imageUrl %>">
             </div>
+            <% } %>
         </div>
     </div>
     <% } %>

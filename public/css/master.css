@@ -1,6 +1,41 @@
 .nav {
   border: solid silver 1px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.navLogo {
+  height: 60px;
+}
+
+.navLeft {
+}
+
+.navRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 15px;
+  color: silver;
+  font-size: 20px;
+}
+.navRight li {
+  margin: 10px;
+  font-weight: bolder;
+}
+.navRight a {
+  background-color: gray;
+    border: none;
+    color: whitesmoke;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+
 .body {
   margin: 15px;
   border: solid silver 2px;
@@ -45,19 +80,18 @@ label {
 }
 .cluckcontentBody {
   padding-left: 5px;
-    color: silver;
-    font-size: 17px;
+  color: silver;
+  font-size: 17px;
 }
 .avatar {
   height: 60px;
 }
-.cluckImage{
+.cluckImage {
   width: auto;
-    height: 200px;
-    text-align: center;
-    padding-top: 5px;
-
-  }
-  .cluckInfo{
-    font-weight: bolder;
-  }
+  height: 200px;
+  text-align: center;
+  padding-top: 5px;
+}
+.cluckInfo {
+  font-weight: bolder;
+}

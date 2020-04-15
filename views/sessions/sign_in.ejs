@@ -1,7 +1,7 @@
-<%- include("./partials/header.ejs") %>
+<%- include("../partials/header.ejs") %>
 <div class="signInBody">
     <% if ( !request.cookies.userName ) {%>
-    <form action="/signIn" method="POST">
+    <form action="/sessions/signIn" method="POST">
         <div class="inputBody">
             <label for="userName">User Name</label><br />
             <input class="inputText" type="text" name="userName" placeholder="e.g. Madam Welminster" />
@@ -24,4 +24,4 @@
 
 </div>
 
-<%- include("./partials/footer.ejs") %>
+<%- include("../partials/footer.ejs") %>

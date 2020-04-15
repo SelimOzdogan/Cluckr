@@ -5,19 +5,19 @@ const router = express.Router();
 
 
 router.get("/signIn", (request, response) => {
-    response.render("sign_in", { request });
+    response.render("sessions/sign_in", { request });
 });
 
 router.post('/signIn', (request, response) => {
     const { userName } = request.body;
     const oneDay = 1000 * 60 * 60 * 24;
     response.cookie('userName', userName, { maxAge: oneDay })
-    response.render("sign_in", { request });
+    response.redirect("/clucks");
 });
 
-router.delete('/signIn', (request, response) => {
+router.get('/signOut', (request, response) => {
     response.clearCookie('userName')
-    response.render("sign_in");
+    response.redirect("/sessions/signIn");
 });
 
 module.exports = router;

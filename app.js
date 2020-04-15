@@ -14,8 +14,10 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (request, response) => {
-    response.render("index");
+app.use((request, response, next) => {
+    const userName = request.cookies.userName;
+    response.locals.loggedInUserName = userName || "";
+    next();
 });
 
 app.use(
@@ -27,12 +29,16 @@ app.use(
     })
 );
 
+
 const sessionsRouter = require("./routes/sessionsRouter");
 app.use("/sessions", sessionsRouter);
 
 const clucksRouter = require("./routes/clucksRouter");
 app.use("/clucks", clucksRouter);
 
+app.get("/", (request, response) => {
+    response.redirect("clucks/");
+});
 
 const PORT = 8080;
 const ADDRESS = "localhost";
