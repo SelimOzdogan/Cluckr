@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+    <% for(let cluck of clucks) { %>
+    <div class="cluckBody">
+        <div class="avatar">
+            <img src="../images/avatar.jpg">
+        </div>
+        <div class="cluckcontentBody">
+            <div class="cluckInfo"><%= `${cluck.userName} ● ${moment(cluck.createdAt).toNow()}` %></div>
+            <div class="cluckcontent">
+                <p><%= cluck.content %> </p>
+            </div>
+            <% if( cluck.imageUrl ) {%>
+            <div class="cluckImage">
+                <img src="<%= cluck.imageUrl %>">
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+</div>
+<%- include('../partials/footer.ejs') %>

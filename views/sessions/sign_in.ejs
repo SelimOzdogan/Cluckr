@@ -1,0 +1,27 @@
+<%- include("../partials/header.ejs") %>
+<div class="signInBody">
+    <% if ( !request.cookies.userName ) {%>
+    <form action="/sessions/signIn" method="POST">
+        <div class="inputBody">
+            <label for="userName">User Name</label><br />
+            <input class="inputText" type="text" name="userName" placeholder="e.g. Madam Welminster" />
+        </div>
+        <div class="divButton">
+            <input type="submit" class="signInButton" value="Sign In">
+        </div>
+    </form>
+    <% } else {%>
+    <form action="/signIn" method="DELETE">
+        <div>
+            <label for="userName">User Name</label>
+            <label><%= request.cookies.userName %></label>
+        </div>
+        <div class="divButton">
+            <input type="submit" class="signInButton" value="Sign Out">
+        </div>
+    </form>
+    <% }%>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

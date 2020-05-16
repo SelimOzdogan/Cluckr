@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selim's Clucks</title>
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/master.css" />
+
+</head>
+<header>
+    <div class="nav">
+        <ul class="navLeft">
+            <li class="navLogo">
+                <a href="/clucks">
+                    <img src="/images/logo.jpg""/>
+                </a>
+            </li>
+        </ul>
+        <ul class =" navRight">
+
+            <li>
+                <a href="/clucks/New">Clucks!</a>
+            </li>
+                <% if( loggedInUserName ) { %>
+            <li>
+                <%= loggedInUserName %>
+            </li>
+            <li>
+                <a href="/sessions/signOut">Sign Out</a>
+            </li>
+            <% } else { %>
+            <li>
+                <a href="/sessions/signIn">Sign In</a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</header>
+
+<body>
+    <div class="body">

@@ -1,0 +1,97 @@
+.nav {
+  border: solid silver 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLogo {
+  height: 60px;
+}
+
+.navLeft {
+}
+
+.navRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 15px;
+  color: silver;
+  font-size: 20px;
+}
+.navRight li {
+  margin: 10px;
+  font-weight: bolder;
+}
+.navRight a {
+  background-color: gray;
+    border: none;
+    color: whitesmoke;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius:5px;
+}
+
+.body {
+  padding: 10px;
+}
+::placeholder {
+  color: silver;
+}
+.inputBody {
+}
+
+.inputText {
+  margin-top: 5px;
+  min-width: -webkit-fill-available;
+  height: 35px;
+  color: black;
+  font-size: 16px;
+  padding-left: 10px;
+}
+textarea {
+  height: 80px !important;
+  padding: 10px !important;
+  border-color: lightgray;
+}
+.divButton {
+  display: flex;
+  flex-flow: row-reverse;
+}
+.inputButton {
+}
+
+label {
+  font-size: 17px;
+  color: silver;
+}
+
+.cluckBody {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 5px 20px 5px;
+  padding: 5px;
+  border: 2px solid lightgray;
+}
+.cluckcontentBody {
+  padding-left: 5px;
+  color: silver;
+  font-size: 17px;
+  width: -webkit-fill-available;
+}
+.avatar {
+  height: 60px;
+}
+.cluckImage {
+  width: auto;
+  height: 200px;
+  text-align: center;
+  padding-top: 5px;
+}
+.cluckInfo {
+  font-weight: bolder;
+}
